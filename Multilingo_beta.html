@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+   Multilingo
+  </title>
+  <link href="Multilingo_beta_estilos.css" rel="stylesheet"/>
+ </head>
+ <body>
+    <!-- Ventana de inicio de sesión -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="document.getElementById('loginModal').style.display = 'none';">&times;</button>
+            <h1>Log In</h1>
+            <form id="loginForm">
+                <label for="loginNickname">Nickname:</label><br>
+                <input type="text" id="loginNickname" name="loginNickname"><br>
+                <label for="loginPassword">Password:</label><br>
+                <input type="password" id="loginPassword" name="loginPassword"><br>
+                <label for="stayLoggedIn">Stay logged in:</label>
+                <input type="checkbox" id="stayLoggedIn" name="stayLoggedIn"><br>
+                <input type="submit" value="Enter">
+                <button type="button" onclick="document.getElementById('loginModal').style.display = 'none'; document.getElementById('registerModal').style.display = 'block';">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Ventana de registro -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="document.getElementById('registerModal').style.display = 'none';">&times;</button>
+            <h1>Register</h1>
+            <form id="registerForm">
+                <label for="nickname">Nickname:</label><br>
+                <input type="text" id="nickname" name="nickname"><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password"><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br>
+                <label for="birth_date">Birth date:</label><br>
+                <input type="date" id="birth_date" name="birth_date"><br>
+                <label for="gender">Gender:</label><br>
+                <input type="radio" id="gender_male" name="gender" value="Male">
+                <label for="gender_male">Male</label><br>
+                <input type="radio" id="gender_female" name="gender" value="Female">
+                <label for="gender_female">Female</label><br>
+                <input type="radio" id="gender_other" name="gender" value="Other">
+                <label for="gender_other">Other</label><br>
+
+
+        
+
+                <label for="primary_language">Primary language:</label><br>
+                <div style="width: 100px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; background-color: white;">
+                    <input type="radio" id="primary_language_english" name="primary_language" value="English">
+                    <label for="primary_language_english">English</label>
+                    <input type="radio" id="primary_language_spanish" name="primary_language" value="Spanish">
+                    <label for="primary_language_spanish">Spanish</label>
+                    <input type="radio" id="primary_language_german" name="primary_language" value="German">
+                    <label for="primary_language_german">German</label>
+                    <input type="radio" id="primary_language_japanese" name="primary_language" value="Japanese">
+                    <label for="primary_language_japanese">Japanese</label>
+                    <input type="radio" id="primary_language_chinese_simplified" name="primary_language" value="Chinese (Simplified)">
+                    <label for="primary_language_chinese_simplified">Chinese (Simplified)</label>
+                    <input type="radio" id="primary_language_chinese_traditional" name="primary_language" value="Chinese (Traditional)">
+                    <label for="primary_language_chinese_traditional">Chinese (Traditional)</label>
+                    <input type="radio" id="primary_language_korean" name="primary_language" value="Korean">
+                    <label for="primary_language_korean">Korean</label>
+                    <input type="radio" id="primary_language_portuguese" name="primary_language" value="Portuguese">
+                    <label for="primary_language_portuguese">Portuguese</label>
+                    <input type="radio" id="primary_language_french" name="primary_language" value="French">
+                    <label for="primary_language_french">French</label>
+                    <input type="radio" id="primary_language_italian" name="primary_language" value="Italian">
+                    <label for="primary_language_italian">Italian</label>
+                    <input type="radio" id="primary_language_dutch" name="primary_language" value="Dutch">
+                    <label for="primary_language_dutch">Dutch</label>
+                    <input type="radio" id="primary_language_swedish" name="primary_language" value="Swedish">
+                    <label for="primary_language_swedish">Swedish</label>
+                    <input type="radio" id="primary_language_norwegian" name="primary_language" value="Norwegian">
+                    <label for="primary_language_norwegian">Norwegian</label>
+                    <input type="radio" id="primary_language_danish" name="primary_language" value="Danish">
+                    <label for="primary_language_danish">Danish</label>
+                    <input type="radio" id="primary_language_hindi" name="primary_language" value="Hindi">
+                    <label for="primary_language_hindi">Hindi</label>
+                    <input type="radio" id="primary_language_urdu" name="primary_language" value="Urdu">
+                    <label for="primary_language_urdu">Urdu</label>
+                    <input type="radio" id="primary_language_russian" name="primary_language" value="Russian">
+                    <label for="primary_language_russian">Russian</label>
+                    <input type="radio" id="primary_language_arabic" name="primary_language" value="Arabic">
+                    <label for="primary_language_arabic">Arabic</label>
+                </div>
+
+
+                <label for="languages_of_interest">Languages of interest:</label><br>
+                <div style="height: 100px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; background-color: white;">
+                    <input type="checkbox" id="languages_of_interest_english" name="languages_of_interest" value="English">
+                    <label for="languages_of_interest_english">English</label>
+                    <input type="checkbox" id="languages_of_interest_spanish" name="languages_of_interest" value="Spanish">
+                    <label for="languages_of_interest_spanish">Spanish</label>
+                    <input type="checkbox" id="languages_of_interest_german" name="languages_of_interest" value="German">
+                    <label for="languages_of_interest_german">German</label>
+                    <input type="checkbox" id="languages_of_interest_japanese" name="languages_of_interest" value="Japanese">
+                    <label for="languages_of_interest_japanese">Japanese</label>
+                    <input type="checkbox" id="languages_of_interest_chinese_simplified" name="languages_of_interest" value="Chinese (Simplified)">
+                    <label for="languages_of_interest_chinese_simplified">Chinese (Simplified)</label>
+                    <input type="checkbox" id="languages_of_interest_chinese_traditional" name="languages_of_interest" value="Chinese (Traditional)">
+                    <label for="languages_of_interest_chinese_traditional">Chinese (Traditional)</label>
+                    <input type="checkbox" id="languages_of_interest_korean" name="languages_of_interest" value="Korean">
+                    <label for="languages_of_interest_korean">Korean</label>
+                    <input type="checkbox" id="languages_of_interest_portuguese" name="languages_of_interest" value="Portuguese">
+                    <label for="languages_of_interest_portuguese">Portuguese</label>
+                    <input type="checkbox" id="languages_of_interest_french" name="languages_of_interest" value="French">
+                    <label for="languages_of_interest_french">French</label>
+                    <input type="checkbox" id="languages_of_interest_italian" name="languages_of_interest" value="Italian">
+                    <label for="languages_of_interest_italian">Italian</label>
+                    <input type="checkbox" id="languages_of_interest_dutch" name="languages_of_interest" value="Dutch">
+                    <label for="languages_of_interest_dutch">Dutch</label>
+                    <input type="checkbox" id="languages_of_interest_swedish" name="languages_of_interest" value="Swedish">
+                    <label for="languages_of_interest_swedish">Swedish</label>
+                    <input type="checkbox" id="languages_of_interest_norwegian" name="languages_of_interest" value="Norwegian">
+                    <label for="languages_of_interest_norwegian">Norwegian</label>
+                    <input type="checkbox" id="languages_of_interest_danish" name="languages_of_interest" value="Danish">
+                    <label for="languages_of_interest_danish">Danish</label>
+                    <input type="checkbox" id="languages_of_interest_hindi" name="languages_of_interest" value="Hindi">
+                    <label for="languages_of_interest_hindi">Hindi</label>
+                    <input type="checkbox" id="languages_of_interest_urdu" name="languages_of_interest" value="Urdu">
+                    <label for="languages_of_interest_urdu">Urdu</label>
+                    <input type="checkbox" id="languages_of_interest_russian" name="languages_of_interest" value="Russian">
+                    <label for="languages_of_interest_russian">Russian</label>
+                    <input type="checkbox" id="languages_of_interest_arabic" name="languages_of_interest" value="Arabic">
+                    <label for="languages_of_interest_arabic">Arabic</label>
+                </div>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+
+    <div class="contenedor-principal">
+        <div class="imagen-pet">
+          <button id="toggle-button" class="toggle-button">&#x2022;<br>&#x2022;<br>&#x2022;</button>
+          <img src="skins/pets/Create an animated 3D pixel art image of-OfficialStableDiffusionsd_xl_base_10s-1625306329 (6).png" alt="Multilingo pet" width="200" height="200"  />
+          <h1 class ="text-effect" >Multilingo</h1>
+          <img class="mirror" src="skins/pets/Create an animated 3D pixel art image of-OfficialStableDiffusionsd_xl_base_10s-1625306329 (6).png" alt="Multilingo pet mirror" width="200" height="200"  />
+        </div>
+        
+        <div class="buttons-container">
+            <button class="button" onclick="displayRandomWords(0)">New Word</button>
+            <button class="button" onclick="displayRandomWords(1)">New phrase</button>
+            <!--<button class="button" onclick="playDjMix()">Play DJ Mix</button>
+            <button class="button" onclick="stopDjMix()">Stop DJ Mix</button>-->
+            <button id="playPauseButton" class="button" onclick="toggleDjMix()">
+                <i class="fas" id="playPauseIcon"></i>
+                <span id="playPauseText">Play DJ Mix</span>
+            </button>
+            <button class="button" onclick="showSoundsModal()">Sounds</button>
+            <button class="button" onclick="showLanguagesModal()">Languages</button>
+            <button class="button" onclick="showSkins()">Skins</button>
+            <button class="button" onclick="showLeaderboards()">Leaderboards</button>
+            <button class="button" onclick="">PvP</button>
+            <button class="button" onclick="">PvB</button>
+            <button id="settings-btn" class="button">Settings</button>
+        </div>
+        <audio id="you-win-sound" src="musica/games_sounds/you-win.mp3"></audio>
+        <audio id="you-lose-sound" src="musica/games_sounds/you-lose.mp3"></audio>
+        <audio id="dj-mix" src="musica/djmix/Rocky Floor V.1.wav" loop></audio>
+        <div class="score" id="score">0</div>
+    </div>
+
+    <div id="skinsModal" class="modal">
+        <div class="modal-content">
+        <button class="close-button" onclick="document.getElementById('skinsModal').style.display = 'none';">&times;</button>  
+        <h2>Selecciona una opción</h2>
+        <button class="button" onclick="showPets()">Pet</button>
+        <button class="button" onclick="showBubbles()">Page Theme</button>
+        <button class="button" onclick="">Clicked Bubble</button>
+        <button class="button" onclick="showBackgrounds()">Background</button>
+        <div id="optionContainer">
+            <!-- Aquí se mostrará el contenido de cada opción -->
+        </div>
+        </div>
+    </div>
+
+    <div id="soundsModal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="document.getElementById('soundsModal').style.display = 'none';">&times;</button>
+            <h2>Sounds Control Panel</h2>
+            <label for="you-win-volume">Volume You Win Sound:</label>
+            <input type="range" id="you-win-volume" name="you-win-volume" min="0" max="1" step="0.01" onchange="changeVolume('you-win-sound', this.value)">
+            <label for="you-lose-volume">Volume You Lose Sound:</label>
+            <input type="range" id="you-lose-volume" name="you-lose-volume" min="0" max="1" step="0.01" onchange="changeVolume('you-lose-sound', this.value)">
+            <label for="dj-mix-volume">Volume DJ Mix:</label>
+            <input type="range" id="dj-mix-volume" name="dj-mix-volume" min="0" max="1" step="0.01" onchange="changeVolume('dj-mix', this.value)">
+            <label for="speech-volume">Volume Speech:</label>
+            <input type="range" id="speech-volume" name="speech-volume" min="0" max="1" step="0.01" onchange="changeSpeechVolume(this.value)">
+        </div>
+    </div>
+      
+    <div class="modal" id="modal">
+        <div class="modal-content">
+          <button class="close-button" onclick="document.getElementById('modal').style.display = 'none';">&times;</button>
+          <h2>Select Languages</h2>
+          <div class="languages-container">
+            <button class="language-button" data-index="0" onclick="toggleLanguageSelection(0)">English</button>
+            <button class="language-button" data-index="1" onclick="toggleLanguageSelection(1)">Spanish</button>
+            <button class="language-button" data-index="2" onclick="toggleLanguageSelection(2)">German</button>
+            <button class="language-button" data-index="3" onclick="toggleLanguageSelection(3)">Japanese</button>
+            <button class="language-button" data-index="4" onclick="toggleLanguageSelection(4)">Chinese (Simplified)</button>
+            <button class="language-button" data-index="5" onclick="toggleLanguageSelection(5)">Chinese (Traditional)</button>
+            <button class="language-button" data-index="6" onclick="toggleLanguageSelection(6)">Korean</button>
+            <button class="language-button" data-index="7" onclick="toggleLanguageSelection(7)">Portuguese</button>
+            <button class="language-button" data-index="8" onclick="toggleLanguageSelection(8)">French</button>
+            <button class="language-button" data-index="9" onclick="toggleLanguageSelection(9)">Italian</button>
+            <button class="language-button" data-index="10" onclick="toggleLanguageSelection(10)">Dutch</button>
+            <button class="language-button" data-index="11" onclick="toggleLanguageSelection(11)">Swedish</button>
+            <button class="language-button" data-index="12" onclick="toggleLanguageSelection(12)">Norwegian</button>
+            <button class="language-button" data-index="13" onclick="toggleLanguageSelection(13)">Danish</button>
+            <button class="language-button" data-index="14" onclick="toggleLanguageSelection(14)">Hindi</button>
+            <button class="language-button" data-index="15" onclick="toggleLanguageSelection(15)">Urdu</button>
+            <button class="language-button" data-index="16" onclick="toggleLanguageSelection(16)">Russian</button>
+            <button class="language-button" data-index="17" onclick="toggleLanguageSelection(17)">Arabic</button>
+          </div>
+    
+          <div class="modal-buttons">
+            <!--<button class="button" onclick="hideLanguagesModal()">Cancel</button>
+            <button class="button" onclick="applyLanguageSelection()">OK</button> -->
+        </div>
+      </div>
+     </div>
+  <script src="Multilingo_beta_scripts.js"></script>
+ </body>
+</html>

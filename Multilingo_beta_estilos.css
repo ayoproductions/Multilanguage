@@ -1,0 +1,340 @@
+
+    body {
+    background-image: url('skins/backgrounds/real_space_black_filter_2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    }
+
+    h1 {
+      text-align: center;
+      font: bold 80px/1 arial;
+      text-transform: uppercase;
+      /*color: #FF69B4;*/
+      color: transparent;
+      text-shadow: 0  2px 0 #FF69B4,
+                   0  4px 0 #F5A9BC,
+                   0  6px 0 #F5A9BC, 
+                   0  8px 0 #F5A9BC, 
+                   0 10px 0 #F5A9BC,
+                   0 12px 0 #FF69B4;
+      margin-top: 50px;
+    }
+
+    .text-effect {
+        z-index: 1;
+        background-image: url('skins/bubbles/2023-08-15-11-32-41-1-quasi__extraterrestrial_landscape_part_by_mario_martinez_part_by_tokio_aoyama_ultra_pixel_art_highly_detailed_hyper-1758625574-scale9.00-k_dpm_2-ayo777.png');
+        background-clip: text; /* Aplicar la imagen solo al área del texto */
+        -webkit-background-clip: text; /* Versión para navegadores webkit (Safari, Chrome) */
+        color: transparent; /* Mantener el texto transparente */
+        background-position: center top;
+      }
+
+    .bubble {
+        position: absolute;
+        padding: 30px;
+        background-color: #F5A9BC;
+        /*background-image: url('skins/backgrounds/2023-08-15-22-38-51-21-quasi__extraterrestrial_landscape_pink_space_part_by_mario_martinez_part_by_tokio_aoyama_ultra_pixel_art_highly_det-13701861-scale25.00-k_dpm_2-ayo777.png');
+        background-size: cover;
+        animation: moveBubble 5s linear infinite; */
+        border-radius: 40%;
+        cursor: pointer;
+        user-select: none;
+        white-space: nowrap; /* Evita que las palabras se envuelvan */
+        overflow: hidden; /* Oculta el texto que desborda */
+        text-overflow: ellipsis; /* Agrega puntos suspensivos al final del texto que desborda */
+        font-size: 5em; /* Tamaño de fuente grande */
+        width: auto; /* Permite que el ancho se ajuste al contenido */
+        height: auto; /* Permite que la altura se ajuste al contenido */
+        text-align: center; /* Centra el texto horizontalmente */
+        }
+    
+
+    @keyframes moveBubble {
+        0% {
+            background-position: 0 0;
+        }
+        25% {
+            background-position: -100px -100px;
+        }
+        50% {
+            background-position: -200px -200px;
+        }
+        75% {
+            background-position: -100px -300px;
+        }
+        100% {
+            background-position: 0 -400px;
+        }
+        }
+
+
+
+    .bubble.word {
+        font-size: 5em; /* Tamaño de fuente grande para palabras */
+        padding: 30px; /* Relleno para palabras */
+    }
+
+    .bubble.phrase {
+        font-size: 4em; /* Tamaño de fuente más pequeño para frases */
+        padding: 15px; /* Relleno más pequeño para frases */
+    }
+
+
+    .bubble span {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1; /* Altura de línea normal */
+        transform: scale(1); /* Escalado inicial de texto */
+        transition: transform 0.3s ease-in-out; /* Transición suave para el escalado de texto */
+        }
+
+    .bubble.clicked span {
+        transform: scale(1.2); /* Escalado de texto en estado cliqueado */
+        }
+
+
+
+    /*.bubble.clicked {
+      background-color: #FF69B4;
+    }*/
+
+    .bubble.clicked {
+        background-image: url('skins/bubbles/2023-08-15-11-32-41-1-quasi__extraterrestrial_landscape_part_by_mario_martinez_part_by_tokio_aoyama_ultra_pixel_art_highly_detailed_hyper-1758625574-scale9.00-k_dpm_2-ayo777.png');
+        background-size: cover; /* Ajusta el tamaño de la imagen al contenedor */
+        animation: moveBubble 5s linear infinite; 
+      }
+
+    .button {
+    z-index: 1000;
+    background-color: #FF69B4;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    margin: 4px;
+    padding: 10px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    width: 170px; /* Ajusta el ancho para que sea igual al de los otros botones */
+    }
+
+    .close-button {
+        color: #FF69B4;
+        font-weight: bold;
+    }
+    
+
+    .button:hover {
+        background-color: #F08080;
+    }
+    
+    .buttons-container {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1000; /* Añade esta línea */
+        pointer-events: none;
+    }
+
+
+    .buttons-container.visible {
+        opacity: 1;
+    }
+
+    .score {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font: bold 140px/1 arial;
+    text-transform: uppercase;
+    color: #FFD700;
+    text-shadow: 0 2px 0 #F5A9BC,
+                0 4px 0 #F5A9BC,
+                0 6px 0 #F5A9BC, 
+                0 8px 0 #F5A9BC, 
+                0 10px 0 #F5A9BC,
+                0 12px 0 #F5A9BC;
+    z-index: 1;
+    }
+
+    /* Ventana emergente de idiomas */
+    .modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255,255,255,0.5);  /* Hacer el fondo semi transparente */
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    }
+
+    .modal-content h1 {
+        font-family: 'Arial', sans-serif;  /* Tipo de letra para el título */
+        font-size: 2em;  /* Tamaño del título */
+    }
+
+    .modal-content label {
+    font-family: 'Arial', sans-serif;  /* Tipo de letra para los títulos de registro */
+    font-size: 1.2em;  /* Tamaño de los títulos de registro */
+    color: #000;  /* Color de los títulos de registro */
+    font-weight: bold;  /* Hacer el texto en negrita */
+    }
+
+    .login-modal-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .login-modal-content h1 {
+    color: pink;  /* Color de la cabecera del inicio de sesión */
+    }
+
+
+    .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    }
+
+    .language-button {
+    background-color: #FF69B4;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px; /* Ajusta el ancho para que sea igual al de los otros botones */
+    margin-top: 10px;
+    }
+
+    .language-button:hover {
+    background-color: #F08080;
+    }
+
+    .language-button.selected {
+    background-color: #ff69b4; /* rosa fuerte */
+    border: none;
+    color: white;
+    }
+
+    .language-button.selected-modal {
+    background-color:  #ff69b4; /* Cambiar el color de fondo a un tono más fuerte */
+    color: #0a0202; /* Cambiar el color del texto a blanco */ 
+    }
+
+
+    .toggle-button {
+    color: #ff69b4;
+    background: transparent;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    }
+
+    .toggle-button.expanded {
+        font-size: 3em;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+
+    .imagen-pet {
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      
+  
+
+    
+    @keyframes levitate {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+    }
+    
+    .imagen-pet img {
+        margin-right: 10px;
+        animation: levitate 2s ease-in-out infinite;
+    }
+
+    @keyframes levitate-mirror {
+        0% {
+            transform: scaleX(-1) translateY(0);
+        }
+        50% {
+            transform: scaleX(-1) translateY(-10px);
+        }
+        100% {
+            transform: scaleX(-1) translateY(0);
+        }
+    }
+
+
+    
+
+      
+    .imagen-pet .mirror {
+        transform: scaleX(-1); /* Invertir horizontalmente la imagen */
+        margin-left: 10px;
+        margin-right: 0;
+        animation: levitate-mirror 2s ease-in-out infinite;
+    }
+    
+
+
+    
+
+
+
+      
+      
+    
+ 
+
+
+
+
+  

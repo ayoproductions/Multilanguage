@@ -1,0 +1,11 @@
+Feliz cumple javier !!! Pasalo BOMB! 
+
+SOLO PARA LO MULTILINGO BETA TESTER:
+
+pasos para correrlo local:
+
+1) Abrir CMD
+2) Escribir esto con cualquier puerto la vdd: python -m http.server 8001
+3) Abrir la ruta en el navegador,debes buscar la ruta y cambiarla pero de ejemplo
+esta es la mia : http://localhost:8001/Desktop/ML/RL/Multilingo/Multilingo_beta.html
+4) Disfruta Multilingo ;) 
